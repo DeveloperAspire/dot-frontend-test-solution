@@ -1,0 +1,26 @@
+// MOBILE FIRST MEDIA QUERY
+@mixin respond($breakpoint) {
+  @if $breakpoint==tablet-up {
+    @media only screen and (min-width: 34.375rem) {
+      @content;
+    }
+
+    // 550px and above
+  }
+
+  @if $breakpoint==laptop-up {
+    @media only screen and (min-width: 68.75rem) {
+      @content;
+    }
+
+    // < 1100px and above
+  }
+
+  @if $breakpoint==desktop-up {
+    @media only screen and (max-width: 93.75rem) {
+      @content;
+    }
+
+    // < 1500px and above
+  }
+}
