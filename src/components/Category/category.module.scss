@@ -1,0 +1,12 @@
+.container {
+  margin: 30px 0 40px 0;
+  &__heading {
+    background-color: var(--heading-color);
+    padding: 2px 10px;
+    border: 1px solid var(--font-color);
+  }
+
+  &__cards {
+    margin-top: 20px;
+  }
+}
