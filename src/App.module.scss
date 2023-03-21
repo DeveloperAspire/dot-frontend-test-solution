@@ -1,0 +1,13 @@
+.container {
+  padding: 10px 0;
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid red;
+  margin: 0 auto;
+
+  &__heading {
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
