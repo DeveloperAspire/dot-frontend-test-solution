@@ -26,6 +26,11 @@ function App() {
 
   const handleToggleModal = () => {
     setToggleModal((prev) => !prev);
+
+    // Reset the selection if user submits votes
+    if (toggleModal) {
+      setSelections([]);
+    }
   };
 
   const handleSelection = (category: string, nominee: string) => {
@@ -34,11 +39,13 @@ function App() {
       nominee,
     };
 
+    // Check if the category has been selected
     const existingItem = selections.find(
       (selected) => newSelection.category === selected.category
     );
 
     if (existingItem) {
+      // Update the nominee if the category been picked exists
       const updatedSelections = selections.map((selected) =>
         selected.category === existingItem.category
           ? { ...selected, nominee: newSelection.nominee }
@@ -53,7 +60,10 @@ function App() {
 
   return (
     <div className={styles["container"]}>
-      <h1 className={styles["container__heading"]}>Golden Globe Award</h1>
+      <h1 className={styles["container__heading"]}>
+        <span>Golden Globe</span>
+        <span>Award</span>
+      </h1>
       {ballot.length === 0 ? (
         <p>Loading</p>
       ) : (
