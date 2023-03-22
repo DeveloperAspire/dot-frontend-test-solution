@@ -10,4 +10,14 @@
     text-align: center;
     text-transform: uppercase;
   }
+
+  &__btn-container {
+    display: grid;
+    place-items: center;
+
+    & button {
+      font-size: 20px;
+      margin: 0 auto;
+    }
+  }
 }

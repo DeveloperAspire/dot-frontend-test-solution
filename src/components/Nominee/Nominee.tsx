@@ -1,3 +1,5 @@
+import Button from "../Button";
+
 import styles from "./nominee.module.scss";
 
 interface NomineeProps {
@@ -39,9 +41,7 @@ const Nominee: React.FC<NomineeProps> = ({
       <div className={styles["container__image"]}>
         <img src={image} alt={name} />
       </div>
-      <button className={styles["container__button"]} onClick={handleClick}>
-        Nominate
-      </button>
+      <Button text="Nominate" handleClick={handleClick} />
     </article>
   );
 };

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "./Api/Api";
 import Category from "./components/Category";
+import Button from "./components/Button";
 
 import styles from "./App.module.scss";
 
@@ -64,6 +65,9 @@ function App() {
           />
         ))
       )}
+      <div className={styles["container__btn-container"]}>
+        <Button text="Submit Vote" handleClick={() => {}} />
+      </div>
     </div>
   );
 }

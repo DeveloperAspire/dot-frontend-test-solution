@@ -1,0 +1,38 @@
+.button {
+  background-color: var(--button-background);
+  background-image: linear-gradient(
+    0deg,
+    hsl(0deg 0% 96%) 0%,
+    hsl(0deg 0% 93%) 15%,
+    hsl(0deg 0% 90%) 24%,
+    hsl(0deg 0% 87%) 31%,
+    hsl(0deg 0% 85%) 35%,
+    hsl(0deg 0% 82%) 40%,
+    hsl(0deg 0% 79%) 46%,
+    hsl(0deg 0% 76%) 56%,
+    hsl(0deg 0% 73%) 72%,
+    hsl(0deg 0% 70%) 100%
+  );
+  border: none;
+  font-family: inherit;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: var(--button-hover-background);
+    background-image: linear-gradient(
+      0deg,
+      hsl(117deg 30% 87%) 0%,
+      hsl(115deg 36% 84%) 15%,
+      hsl(113deg 39% 82%) 24%,
+      hsl(111deg 42% 79%) 31%,
+      hsl(109deg 44% 76%) 35%,
+      hsl(107deg 45% 74%) 40%,
+      hsl(105deg 47% 71%) 46%,
+      hsl(103deg 47% 69%) 56%,
+      hsl(100deg 48% 67%) 72%,
+      hsl(98deg 49% 64%) 100%
+    );
+  }
+}
