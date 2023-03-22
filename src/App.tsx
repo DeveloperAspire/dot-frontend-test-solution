@@ -5,15 +5,11 @@ import Button from "./components/Button";
 import Modal from "./components/Modal";
 
 import styles from "./App.module.scss";
-
-interface selectionType {
-  category: string;
-  nominee: string;
-}
+import { SelectionType } from "./utils/types";
 
 function App() {
   const [ballot, setBallot] = useState([]);
-  const [selections, setSelections] = useState<selectionType[]>([]);
+  const [selections, setSelections] = useState<SelectionType[]>([]);
   const [toggleModal, setToggleModal] = useState(false);
 
   useEffect(() => {

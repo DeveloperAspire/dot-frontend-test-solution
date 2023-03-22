@@ -2,12 +2,14 @@ import Button from "../Button";
 
 import styles from "./nominee.module.scss";
 
+import { SelectionType } from "../../utils/types";
+
 interface NomineeProps {
   name: string;
   image: string;
   handleSelection: (category: string, nominee: string) => void;
   category: string;
-  selections: any[];
+  selections: SelectionType[];
 }
 
 const Nominee: React.FC<NomineeProps> = ({

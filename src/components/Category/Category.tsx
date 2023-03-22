@@ -1,11 +1,12 @@
 import Nominee from "../Nominee";
 import styles from "./category.module.scss";
+import { SelectionType, NomineeType } from "../../utils/types";
 
 interface CategoryProps {
-  items: any[];
+  items: NomineeType[];
   title: string;
   handleSelection: (category: string, nomineeId: string) => void;
-  selections: any[];
+  selections: SelectionType[];
 }
 
 const Category: React.FC<CategoryProps> = ({
