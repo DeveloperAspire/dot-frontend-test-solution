@@ -1,3 +1,11 @@
+# Franklin's Solution
+
+This repository contains my solution the Dot-Frontend-Test, you can find my solution on the `franklin/solution` branch of this repository.
+
+You can checkout:
+
+`git checkout franklin/solution`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -5,6 +13,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run backend`
+
+This will start the backend server and make the API methods avaliable.
 
 ### `npm start`
 
