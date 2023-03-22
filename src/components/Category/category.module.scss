@@ -8,5 +8,7 @@
 
   &__cards {
     margin-top: 20px;
+    display: grid;
+    row-gap: 30px;
   }
 }

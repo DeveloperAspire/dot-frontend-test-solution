@@ -1,12 +1,23 @@
 import Nominee from "../Nominee";
 import styles from "./category.module.scss";
 
-const Category = () => {
+interface CategoryProps {
+  items: any[];
+  title: string;
+}
+
+const Category: React.FC<CategoryProps> = ({ title, items }) => {
   return (
     <section className={styles["container"]}>
-      <div className={styles["container__heading"]}>Category 1</div>
+      <div className={styles["container__heading"]}>{title}</div>
       <div className={styles["container__cards"]}>
-        <Nominee />
+        {items.map((nominee) => (
+          <Nominee
+            name={nominee.title}
+            image={nominee.photoUrL}
+            key={nominee.id}
+          />
+        ))}
       </div>
     </section>
   );
