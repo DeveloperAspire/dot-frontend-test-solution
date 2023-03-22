@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "./Api/Api";
 import Category from "./components/Category";
 import Button from "./components/Button";
+import Modal from "./components/Modal";
 
 import styles from "./App.module.scss";
 
@@ -13,6 +14,7 @@ interface selectionType {
 function App() {
   const [ballot, setBallot] = useState([]);
   const [selections, setSelections] = useState<selectionType[]>([]);
+  const [toggleModal, setToggleModal] = useState(false);
 
   useEffect(() => {
     fetchBallotData();
@@ -24,6 +26,10 @@ function App() {
     const { items } = response;
 
     setBallot(items);
+  };
+
+  const handleToggleModal = () => {
+    setToggleModal((prev) => !prev);
   };
 
   const handleSelection = (category: string, nominee: string) => {
@@ -66,8 +72,10 @@ function App() {
         ))
       )}
       <div className={styles["container__btn-container"]}>
-        <Button text="Submit Vote" handleClick={() => {}} />
+        <Button text="Submit Vote" handleClick={handleToggleModal} />
       </div>
+
+      <Modal show={toggleModal} handleToogle={handleToggleModal} />
     </div>
   );
 }
