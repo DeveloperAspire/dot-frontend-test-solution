@@ -4,8 +4,15 @@ import Category from "./components/Category";
 
 import styles from "./App.module.scss";
 
+interface selectionType {
+  category: string;
+  nominee: string;
+}
+
 function App() {
   const [ballot, setBallot] = useState([]);
+  const [selections, setSelections] = useState<selectionType[]>([]);
+
   useEffect(() => {
     fetchBallotData();
   }, []);
@@ -16,6 +23,29 @@ function App() {
     const { items } = response;
 
     setBallot(items);
+  };
+
+  const handleSelection = (category: string, nominee: string) => {
+    const newSelection = {
+      category,
+      nominee,
+    };
+
+    const existingItem = selections.find(
+      (selected) => newSelection.category === selected.category
+    );
+
+    if (existingItem) {
+      const updatedSelections = selections.map((selected) =>
+        selected.category === existingItem.category
+          ? { ...selected, nominee: newSelection.nominee }
+          : { ...selected }
+      );
+
+      setSelections(updatedSelections);
+    } else {
+      setSelections([...selections, { ...newSelection }]);
+    }
   };
 
   return (
@@ -29,6 +59,8 @@ function App() {
             key={ballotItem.id}
             items={ballotItem.items}
             title={ballotItem.title}
+            handleSelection={handleSelection}
+            selections={selections}
           />
         ))
       )}

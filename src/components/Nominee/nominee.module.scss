@@ -14,7 +14,8 @@
     background-color: var(--card-hover);
   }
 
-  &__name {
+  &--selected {
+    background-color: var(--card-selected);
   }
 
   &__image {
